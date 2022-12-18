@@ -1,129 +1,190 @@
-.container {
-  padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.panel {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 20px;
+  z-index: 1000;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+
+
+.intro {
+  /* background-color: #EEEEEE; */
+  width: 80%;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+
+
+.overlay {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8475723052893032) 0%, rgba(0, 0, 0, 0.5142389719559699) 47%, rgba(0, 0, 0, 0) 100%);
+  padding: 0 10px;
+  height: 100%;
+  width: 100%;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.overlay:hover {
+  background: rgba(0, 0, 0, 0) !important;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  padding: 20px;
+  color: #EEEEEE;
+  margin-top: -90px;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
 }
 
-.title,
-.description {
-  text-align: center;
+.hide {
+  display: none;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.title div {
+  font-size: 35px;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.title h4 {
+  padding-bottom: 5px;
 }
 
-.grid {
+.title h4:hover {
+  border-bottom: solid 3px #FD7013;
+}
+
+.content {
+  display: none;
+  margin-top: 25px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contact_us li,
+.languages,
+.content_box,
+.skills {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.award,
+.experience_Box,
+.edu_box,
+.project {
+  margin-bottom: 20px;
+}
+
+.project {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.project div {
+  margin-right: 20px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.project img {
+  width: 70px;
+  height: 100%;
+  border-radius: 5px;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.award div,
+.experience_Box div div,
+.edu_box div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.experience_Box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.link {
+  align-self: end;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #FD7013;
+}
+
+.experience_Box div:nth-child(2) {
+  margin: 0 20px;
+}
+
+.award div .year {
+  border-bottom: solid 3px #FD7013;
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  width: 70px;
+  height: 70px;
+}
+
+.content_box {
+  justify-content: space-between;
+}
+
+.skills li {
+  margin: 10px !important;
+}
+
+.languages p,
+.skills li {
+  padding: 5px 10px;
+  background-color: #FD7013;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  .container {
+    flex-direction: column-reverse;
   }
+
+  .panel {
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    flex-direction: column;
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .section {
+    width: 100%;
+    height: 200px;
+  }
+
+
+  .intro {
+    width: 100% !important;
+    height: 400px;
+  }
+
+  .hide {
+    display: block;
+  }
+
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+
+  100% {
+    opacity: 1;
   }
 }

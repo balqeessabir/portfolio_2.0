@@ -59,6 +59,7 @@
   margin-top: 25px;
   flex-direction: column;
   overflow: hidden;
+  max-height: 450px;
 }
 
 .contact_us li,
@@ -160,6 +161,7 @@
     flex-direction: column;
     margin-top: 0;
     height: 100%;
+    padding: 0 20px;
   }
 
   .section {

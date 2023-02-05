@@ -7,6 +7,26 @@ body {
   background-color: #222831;
 }
 
+nav {
+  display: flex;
+  color: #eee;
+  height: 80px;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cairo Play', cursive;
+  border-bottom: solid 3px #FD7013;
+  margin-bottom: 40px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  font-weight: 700;
+}
+
 .section {
   width: 16%;
   height: 76vh;
@@ -166,7 +186,9 @@ ul {
   animation-duration: 11s;
 }
 
-
+.mobile_only {
+  display: none;
+}
 
 @keyframes animate {
 
@@ -182,4 +204,38 @@ ul {
     border-radius: 50%;
   }
 
+}
+
+.mobile_menu ul li {
+  text-align: center;
+  color: #fff;
+}
+
+.mobile_menu ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile_menu ul li:hover {
+  background-color: #FD7013;
+  cursor: pointer;
+}
+
+.hide_desktop {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .hide_desktop {
+    display: flex !important;
+  }
+
+  .mobile_only {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
 }

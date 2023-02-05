@@ -2,13 +2,17 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import classNames from "classnames";
+import { Twirl as Hamburger } from "hamburger-react";
 import {
   BsFillPinMapFill,
   BsFillTelephoneFill,
   BsFillEnvelopeFill,
 } from "react-icons/bs";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
+  const [showMenu, setShowMenu] = useState(false);
   const expand = (id) => {
     const elem = document.getElementsByClassName("section");
 
@@ -46,6 +50,31 @@ export default function Home() {
   };
   return (
     <>
+      <div className="mobile_only">
+        <Hamburger
+          Direction="right"
+          color="#FFF"
+          onToggle={(toggled) => {
+            if (toggled) {
+              setShowMenu(true);
+            } else {
+              setShowMenu(false);
+            }
+          }}
+        />
+      </div>
+      {showMenu && (
+        <div className="mobile_menu">
+          <ul>
+            <li>About</li>
+            <li>Education</li>
+            <li>Experience</li>
+            <li>Skills</li>
+            <li>Projects</li>
+            <li>Awards</li>
+          </ul>
+        </div>
+      )}
       <div className={classNames(styles.panel, "hide")}>
         <div
           className={classNames(styles.experience, "section")}
@@ -99,10 +128,7 @@ export default function Home() {
                     in different fields.
                   </p>
                 </div>
-                <img
-                  src="/final.png"
-                  style={{ backgroundColor: "#EEE", padding: "10px" }}
-                />
+                <img src="/final.png" />
               </div>
               <div className={styles.project}>
                 <div>
@@ -141,7 +167,9 @@ export default function Home() {
                   style={{ backgroundColor: "#EEE", padding: "10px" }}
                 />
               </div>
-              <a className={styles.link}>Find out more</a>
+              <Link className={styles.link} href="/projects">
+                Find out more
+              </Link>
             </div>
           </div>
         </div>
@@ -225,7 +253,9 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <a className={styles.link}>Find out more</a>
+              <Link className={styles.link} href="/experience">
+                Find out more
+              </Link>
             </div>
           </div>
         </div>
@@ -323,6 +353,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className={styles.title}>
         <div>
           <h1>Hello, this is Balqees</h1>
